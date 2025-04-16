@@ -1,5 +1,5 @@
 
-import { CardStack, Image, Vector } from "lucide-react";
+import { ImageIcon, Layers, FileVector } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 export type GenerationType = "image" | "clipart" | "vector";
@@ -14,19 +14,19 @@ export const TypeSelector = ({ selectedType, onTypeSelect }: TypeSelectorProps) 
     {
       id: "image",
       name: "Image",
-      icon: Image,
+      icon: ImageIcon,
       description: "Realistic photo-like images",
     },
     {
       id: "clipart",
       name: "Clipart",
-      icon: CardStack,
+      icon: Layers,
       description: "Stylized clipart illustrations",
     },
     {
       id: "vector",
       name: "Vector",
-      icon: Vector,
+      icon: FileVector,
       description: "Clean vector graphics",
     },
   ];
