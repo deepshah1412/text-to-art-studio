@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { ImageGeneratorHeader } from "@/components/ImageGeneratorHeader";
@@ -8,6 +7,7 @@ import { StyleSelector } from "@/components/StyleSelector";
 import { PromptInput } from "@/components/PromptInput";
 import { ImageDisplay } from "@/components/ImageDisplay";
 import { toast } from "sonner";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   const [selectedType, setSelectedType] = useState<GenerationType>("image");
@@ -71,6 +71,7 @@ const Index = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
