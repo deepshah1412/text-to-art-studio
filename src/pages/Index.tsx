@@ -1,11 +1,67 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState } from "react";
+import { ImageGeneratorHeader } from "@/components/ImageGeneratorHeader";
+import { TypeSelector, type GenerationType } from "@/components/TypeSelector";
+import { StyleSelector } from "@/components/StyleSelector";
+import { PromptInput } from "@/components/PromptInput";
+import { ImageDisplay } from "@/components/ImageDisplay";
+import { toast } from "sonner";
 
 const Index = () => {
+  const [selectedType, setSelectedType] = useState<GenerationType>("image");
+  const [selectedStyle, setSelectedStyle] = useState<string>("");
+  const [prompt, setPrompt] = useState("");
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [generatedImage, setGeneratedImage] = useState<string>();
+
+  const handleGenerate = () => {
+    if (!selectedStyle) {
+      toast.error("Please select a style first");
+      return;
+    }
+    if (!prompt) {
+      toast.error("Please enter a prompt");
+      return;
+    }
+
+    setIsGenerating(true);
+    // Simulate image generation - replace with actual API call
+    setTimeout(() => {
+      setGeneratedImage("https://source.unsplash.com/random");
+      setIsGenerating(false);
+      toast.success("Image generated successfully!");
+    }, 2000);
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="container mx-auto px-4 py-8 max-w-6xl">
+      <ImageGeneratorHeader />
+      
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="space-y-6">
+          <TypeSelector
+            selectedType={selectedType}
+            onTypeSelect={setSelectedType}
+          />
+          <StyleSelector
+            type={selectedType}
+            selectedStyle={selectedStyle}
+            onStyleSelect={setSelectedStyle}
+          />
+          <PromptInput
+            prompt={prompt}
+            onPromptChange={setPrompt}
+            onGenerate={handleGenerate}
+            isGenerating={isGenerating}
+          />
+        </div>
+        
+        <div>
+          <ImageDisplay
+            imageUrl={generatedImage}
+            isLoading={isGenerating}
+          />
+        </div>
       </div>
     </div>
   );
