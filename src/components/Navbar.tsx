@@ -12,19 +12,19 @@ export const Navbar = () => {
         <div className="flex gap-8">
           <Link
             to="/"
-            className="text-sm text-gray-300 hover:text-green-400 transition-colors duration-200"
+            className="text-sm text-gray-300 hover:text-primary transition-colors duration-200"
           >
             Home
           </Link>
           <a
             href="#demo"
-            className="text-sm text-gray-300 hover:text-green-400 transition-colors duration-200"
+            className="text-sm text-gray-300 hover:text-primary transition-colors duration-200"
           >
             How It Works
           </a>
           <a
             href="#generateSection"
-            className="text-sm text-gray-300 hover:text-green-400 transition-colors duration-200"
+            className="text-sm text-gray-300 hover:text-primary transition-colors duration-200"
           >
             Generate
           </a>

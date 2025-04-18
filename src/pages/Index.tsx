@@ -9,7 +9,8 @@ import { PromptInput } from "@/components/PromptInput";
 import { ImageDisplay } from "@/components/ImageDisplay";
 import { toast } from "sonner";
 import { Footer } from "@/components/Footer";
-
+import { ShowcaseImages } from "@/components/ShowcaseImages";
+import { FAQ } from "@/components/FAQ";
 const Index = () => {
   const [selectedType, setSelectedType] = useState<GenerationType>("image");
   const [selectedStyle, setSelectedStyle] = useState<string>("");
@@ -64,6 +65,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-8 max-w-5xl">
           <ImageGeneratorHeader />
           <VideoDemo />
+          <ShowcaseImages />
             <GenerateImageSectionHeader/>
             <div id="generate" className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="space-y-6">
@@ -92,6 +94,7 @@ const Index = () => {
           </div>
         </div>
       </div>
+      <FAQ/>
       <Footer />
     </div>
   );

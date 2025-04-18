@@ -22,14 +22,14 @@ export const ImageDisplay = ({ imageUrl, isLoading }: ImageDisplayProps) => {
       <Card className="w-full aspect-square flex items-center justify-center overflow-hidden">
         {isLoading ? (
           <div className="flex flex-col items-center gap-4">
-            <Loader2 className="h-8 w-8 animate-spin text-green-400" />
+            <Loader2 className="h-8 w-8 animate-spin text-primary" />
             <p className="text-gray-500">Creating your masterpiece...</p>
           </div>
         ) : imageUrl ? (
           <img  
             src={imageUrl}
             alt="Generated image"
-            className="w-90 h-90 object-cover"
+            className="w-[90%] h-[90%] object-cover"
           />
         ) : (
           <p className="text-gray-500">Your generated image will appear here</p>

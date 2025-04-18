@@ -4,7 +4,7 @@ import { Play } from "lucide-react";
 
 export const VideoDemo = () => {
   return (
-    <div id="demo" className="mb-12">
+    <div id="demo" className="mb-12" style = {{width : "800px", margin: "0 auto 20px auto"}}>
       <h2 className="text-2xl font-semibold mb-4">How It Works</h2>
       {/*<Card className="aspect-video relative flex items-center justify-center bg-muted">
          Replace with actual video player or embed 
@@ -13,8 +13,8 @@ export const VideoDemo = () => {
           <p className="text-muted-foreground">Video demonstration coming soon</p>
         </div>
       </Card>*/}
-      <Card className="aspect-video relative flex items-center justify-center bg-muted">        
-        <video controls className="w-full h-full object-cover">
+      <Card className="aspect-video relative flex items-center justify-center bg-muted" style = {{borderRadius: "22px"}} >        
+        <video controls className="w-full h-full object-cover" style = {{borderRadius: "20px"}}>
           <source src="public/Intro_video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
