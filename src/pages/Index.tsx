@@ -34,7 +34,7 @@ const Index = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          'x-api-key': 'Q_2wS29Dz6trJ0WemEfa4iG4gDtgN0S5JodGBytdPIo'
+          'x-api-key': 'YOUR API KEY'
         },
         body: JSON.stringify({
           prompt,
